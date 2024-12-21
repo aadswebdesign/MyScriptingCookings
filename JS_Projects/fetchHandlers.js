@@ -18,7 +18,7 @@ export class FetchStatusHandler {
         return response;
     }
 }
-export async function getHandler(args){
+export async function getDataHandler(args){
 	const handlerObjects = new Map([['objects',args]]);
 	const argObjects = handlerObjects.get('objects');
 	const {el_url ,response_cb} = argObjects;

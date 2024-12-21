@@ -25,7 +25,7 @@ import * as FHL from './factory/fetchHandlers.js';
 	};
 	await FHL.getHyperlinkHandler(testObjectOne);
 	/**
-	 * FHL.getHandler
+	 * FHL.getDataHandler
 	 * important note, this is raw and needed safety measurements are not implemented yet!
 	 */
 	const baseUrl = window.location.origin;
@@ -48,5 +48,5 @@ import * as FHL from './factory/fetchHandlers.js';
 		el_url: result_url,
 		response_cb: await responseCallbackTwo
 	};
-	const result_data = await FHL.getHandler(testObjectTwo);
+	await FHL.getDataHandler(testObjectTwo);
 })();
