@@ -18,6 +18,24 @@ export class FetchStatusHandler {
         return response;
     }
 }
+export async function getHandler(args){
+	const handlerObjects = new Map([['objects',args]]);
+	const argObjects = handlerObjects.get('objects');
+	const {el_url ,response_cb} = argObjects;
+	const fetch_setup = new FetchStatusHandler(
+		new FetchHandler()
+	);
+	if(el_url !== null){
+		const elUrl = el_url;
+		const get_data = async ()=>{
+			const response = await fetch_setup.fetchData(`${elUrl}`);
+			await response_cb(response);
+		};
+		return await get_data();
+	}
+}
+
+
 
 export async function getHyperlinkHandler(args){
 	const handlerObjects = new Map([['objects',args]]);
@@ -41,55 +59,4 @@ export async function getHyperlinkHandler(args){
 		
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//==================================================
-//todo, sort this out and is for later if I need it?
-/*
-export async function InitFetchHandler(...args){
-	const [click_elem,url] = args;
-	const controller = new AbortController();
-	if(click_elem){
-		click_elem.addEventListener('click', async ()=>{
-			try {
-				console.log("Starting fetch");
-				const response = await fetch(url, {
-				  signal: controller.signal,
-				});
-				console.log(`Response: ${response.status}`);
-			} catch (e) {
-				console.error(`Error: ${e}`);
-			}			
-		});
-	}
-}
-export async function CancelFetchHandler(...args){
-	const [click_elem,url] = args;
-	const controller = new AbortController();
-	if(click_elem){
-		click_elem.addEventListener('click', async ()=>{
-			controller.abort();
-			console.log("Canceled fetch");	
-		});
-	}
-}
-*/
-//export async function basicFetchAPIData(){
-	//todo console.log('basicFetchAPIData');
-//}
-//export async function yieldFetchAPIData(){
-	//todo console.log('yieldFetchAPIData');
-//}
 
