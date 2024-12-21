@@ -1,19 +1,13 @@
-# MyPHPCookings
+# MyScriptingsCookings
 
-A place where I'm going to submit php stuff that might comming in handy for others too.
+A Place where I'm going to place snippets out of a  project where I'm working on.
 
-1. 08-12-2024, ValidatorExtended.
+It could be anything, javascript, php, css, html, svg whatever?
 
-An extension of vlucas's Valitron/Validator.
+All free to use but without any quarantee or responsibility they work as intended, it's all at your own risc!
 
-With the aim to creating a more JSON friendly output of Error values!
+Each discipline will have it's own md file with some details.
 
-Old, with the errors() method and still possible
+Finally, most of what I place here, is of what I have learned from making **mistakes!** and I still make them to **learn more!**
 
-Valitron: <code>{"post_title":["Post Title is required"],"post_content":["Post Content is required"]}</code>
-
-New, with the errorsFlatten() method
-
-ValidatorExtended: <code>{"post_title":"Post Title is required","post_content":"Post Content is required"}</code>
-
-The editions in this file are very minimal but making the JSON output, much easier to access in the frontend
+Positive but Critical feedback is welcome!
