@@ -1,4 +1,7 @@
-/**Home assets/scrips/factory/fetchHandlers.js */
+/**
+  * github	
+  * Home assets/scrips/factory/fetchHandlers.js 
+  */
 export class FetchHandler {
     fetchData(resource, options) {
         return fetch(resource, options);
@@ -21,26 +24,24 @@ export class FetchStatusHandler {
 export async function getDataHandler(args){
 	const handlerObjects = new Map([['objects',args]]);
 	const argObjects = handlerObjects.get('objects');
-	const {el_url ,response_cb} = argObjects;
+	const {el_url ,response_cb,fetch_options} = argObjects;
 	const fetch_setup = new FetchStatusHandler(
 		new FetchHandler()
 	);
 	if(el_url !== null){
 		const elUrl = el_url;
 		const get_data = async ()=>{
-			const response = await fetch_setup.fetchData(`${elUrl}`);
+			const response = await fetch_setup.fetchData(`${elUrl}`,fetch_options);
 			await response_cb(response);
 		};
 		return await get_data();
 	}
 }
 
-
-
 export async function getHyperlinkHandler(args){
 	const handlerObjects = new Map([['objects',args]]);
 	const argObjects = handlerObjects.get('objects');
-	const {el_url ,response_cb} = argObjects;
+	const {el_url ,response_cb,fetch_options} = argObjects;
 	const fetch_setup = new FetchStatusHandler(
 		new FetchHandler()
 	); 
@@ -51,7 +52,7 @@ export async function getHyperlinkHandler(args){
 			const url = elUrl.href;
 			if(url){
 				(async ()=>{
-					const response = await fetch_setup.fetchData(`${url}`);
+					const response = await fetch_setup.fetchData(`${url}`,fetch_options);
 					await response_cb(response);
 				})();
 			}
