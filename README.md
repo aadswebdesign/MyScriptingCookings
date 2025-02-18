@@ -11,3 +11,5 @@ Each discipline will have it's own md file with some details.
 Finally, most of what I place here, is of what I have learned from making **mistakes!** and I still make them to **learn more!**
 
 Positive but Critical feedback is welcome!
+
+Just created a new directory 'Shorties' for my indidual js files and my EditorManager

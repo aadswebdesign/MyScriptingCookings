@@ -10,7 +10,7 @@ Also, 'import' is as I have them in my project discipline and you have to deal w
 
 - File
   
-  - **fetchHandlers.js**
+  - **Shorties/fetchHandlers.js**
     - functions
       1. getHyperlinkHandler(args)
          - Depedencies; 
@@ -30,7 +30,7 @@ Also, 'import' is as I have them in my project discipline and you have to deal w
 
 - File  
   
-  - **handyFunctions.js**
+  - **Shorties/handyFunctions.js**
     
     - func 01
       
